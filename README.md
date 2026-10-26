@@ -1,22 +1,13 @@
-# PSFree version 1.5.0b
+# MISTER PLAYSTATION Bogor — PS4 Host Menu
 
-Lapse Kex ported to 9.00
+Website statis responsif untuk GitHub Pages. Background/logo toko disimpan di `assets/mister-playstation-background.png`. Menu firmware hanya menampilkan informasi dan tidak menjalankan exploit atau payload.
 
-Very fast and reliable! Around 80% stability rate.
+## Upload ke GitHub Pages
+1. Ekstrak ZIP.
+2. Buka https://github.com/hakaidocan/misterps
+3. Upload `index.html`, `README.md`, dan folder `assets` ke root repositori. Jangan ubah struktur folder.
+4. Commit ke branch `main`.
+5. Buka **Settings → Pages**; pilih **Deploy from a branch**, branch `main`, folder `/(root)`, lalu Save.
+6. Setelah deployment berhasil, buka https://hakaidocan.github.io/misterps/
 
-Update: I've added an payload having some process_dtor_handler patches related to aio bugs.. Now all games should work properly.. patches were made by abc for 8.0x and I ported to 9.00. Thx a lot to Sistro and CTN for some explanation on low level coding!!! :)
-
-PSFree is a collection of exploits for the PS4 console. The main focus of the 
-repo is for the PS4 but we try to make things portable to PS5.
-
-* Exploits
-  * PSFree: src/psfree.mjs
-  * Lapse (kernel): src/scripts/lapse.mjs
-
-# COPYRIGHT AND AUTHORS:
-AGPL-3.0-or-later (see src/COPYING). This repo belongs to the group
-`anonymous`. We refer to anonymous contributors as "anonymous" as well.
-# CREDITS:
-* anonymous for PS4 firmware kernel dumps
-* Check the appropriate files for any **extra** contributors. Unless otherwise
-  stated, everything here can also be credited to us.
+Dokumentasi: https://docs.github.com/en/pages
