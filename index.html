@@ -1,48 +1,86 @@
-<!-- Copyright (C) 2023-2025 anonymous
-
-This file is part of PSFree.
-
-PSFree is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as
-published by the Free Software Foundation, either version 3 of the
-License, or (at your option) any later version.
-
-PSFree is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
--->
-<html>
-    <head>
-        <meta charset='utf-8'>
-        <title>PSFree-Lapse Exploit For PS4 9.00</title>
-        <style>
-            @font-face {
-                font-family: 'logging';
-                src: url('fonts/LiberationMono-Regular.ttf');
-            }
-            #console {
-                font-family: 'logging';
-            }
-        </style>
-        <script>
-        if (window.applicationCache.status=='0')
-        {
-          window.location.replace("cache.html");
-        }
-        </script>
-    </head>
-    <body>
-    <body style="background: url('layar laptop mister.png') no-repeat center center fixed; background-size: cover;">
-        PSFree: A PS4/PS5 Exploit Chain
-        <br>
-        <br>
-        See <a href='./about.html' data-jslicense='1'>JavaScript license information</a> for the
-        source code and license.<br>
-        <pre id='console'></pre>
-    </body>
-    <script type='module' src='./alert.mjs'></script>
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080b12">
+<meta name="description" content="MISTER PLAYSTATION Bogor — halaman navigasi informasi PS4 GoldHEN.">
+<title>MISTER PLAYSTATION Bogor | PS4 Host Menu</title>
+<style>
+:root{color-scheme:dark;--bg:#080b12;--panel:#111827;--panel2:#151f30;--line:#263348;--text:#edf4ff;--muted:#a2b0c5;--blue:#39a9ff;--cyan:#57f0e5;--gold:#ffd166;--red:#ff6b78}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#142844 0%,#080b12 55%);font-family:Arial,Helvetica,sans-serif;color:var(--text);min-height:100vh}
+.wrap{width:min(1050px,92%);margin:auto;padding:28px 0 40px}
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0 25px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:13px}.logo{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#07101a;font-size:24px;font-weight:900;box-shadow:0 0 28px #39a9ff40}
+h1{font-size:clamp(20px,4vw,30px);margin:0;letter-spacing:.4px}.sub{margin:6px 0 0;color:var(--muted);font-size:13px}
+.pill{border:1px solid #2b4763;background:#102035;color:#9fd8ff;padding:8px 12px;border-radius:999px;font-size:12px;white-space:nowrap}
+.hero{padding:34px 0 22px}.eyebrow{color:var(--cyan);font-size:12px;letter-spacing:2px;font-weight:bold}.hero h2{font-size:clamp(27px,5vw,44px);line-height:1.08;margin:12px 0}.hero p{color:var(--muted);max-width:700px;line-height:1.65;margin:0}
+.notice{margin:18px 0 26px;padding:14px 16px;border:1px solid #68552b;background:#211b10;border-radius:13px;color:#ffe4a0;line-height:1.5;font-size:13px}
+.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:28px 0 14px}.sectionhead h3{margin:0;font-size:18px}.sectionhead span{font-size:12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.card{background:linear-gradient(145deg,#141e2e,#0e1420);border:1px solid var(--line);border-radius:16px;padding:18px;min-height:158px;display:flex;flex-direction:column;gap:10px;transition:transform .18s,border-color .18s}
+.card:hover{transform:translateY(-2px);border-color:#3b82b8}.fw{color:var(--cyan);font-size:11px;letter-spacing:1px;font-weight:bold}.card h4{font-size:17px;margin:0}.card p{font-size:13px;color:var(--muted);line-height:1.5;margin:0;flex:1}
+button,.linkbtn{font:inherit;cursor:pointer;border:1px solid #2e6793;background:#102b43;color:#dff4ff;padding:10px 12px;border-radius:10px;text-align:center;text-decoration:none;font-size:13px;font-weight:bold}
+button:hover,.linkbtn:hover{background:#174366}.secondary{background:#151e2c;border-color:#334155;color:#d4deec}
+.info{display:none;margin-top:12px;padding:13px;border:1px solid #34465f;background:#0b1220;border-radius:12px;color:#d1e0f5;font-size:13px;line-height:1.6}.info.show{display:block}
+.tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.tool{border:1px solid var(--line);background:#0f1724;border-radius:14px;padding:17px}.tool h4{margin:0 0 7px}.tool p{margin:0 0 13px;color:var(--muted);font-size:13px;line-height:1.55}
+footer{border-top:1px solid var(--line);margin-top:32px;padding-top:20px;color:#8291a8;font-size:12px;line-height:1.7;text-align:center}
+a{color:#87d4ff}.smallprint{font-size:11px;color:#8291a8}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pill{display:none}}
+@media(max-width:480px){.grid,.tools{grid-template-columns:1fr}.wrap{width:91%}.card{min-height:140px}header{align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand"><div class="logo">MP</div><div><h1>MISTER PLAYSTATION</h1><p class="sub">BOGOR · PS4 HOST MENU</p></div></div>
+  <div class="pill">COMMUNITY MENU · DEMO</div>
+</header>
+<main>
+  <section class="hero">
+    <div class="eyebrow">PLAYSTATION 4 · INFORMATION HUB</div>
+    <h2>PS4 Host<br><span style="color:var(--cyan)">Firmware Navigator</span></h2>
+    <p>Halaman navigasi bergaya host PS4 untuk MISTER PLAYSTATION Bogor. Pilih kelompok firmware untuk melihat catatan kompatibilitas dan referensi. Antarmuka ini hanya tampilan/menu — tidak memuat exploit, payload, atau GoldHEN.</p>
+  </section>
+  <div class="notice"><strong>Catatan penting:</strong> Tombol firmware di bawah hanya membuka informasi demo. Tidak ada payload yang dijalankan dan tidak ada klaim kompatibilitas. Periksa firmware dan sumber proyek sebelum menggunakan file pihak ketiga.</div>
+  <div class="sectionhead"><h3>Pilih Firmware</h3><span>Menu navigasi · bukan exploit aktif</span></div>
+  <section class="grid" aria-label="Firmware menu">
+    <article class="card"><div class="fw">MULTI FIRMWARE</div><h4>GoldHEN Multi FW</h4><p>Panel informasi untuk kelompok firmware yang didukung oleh host sumber.</p><button onclick="showInfo('multi')">Lihat informasi</button></article>
+    <article class="card"><div class="fw">FIRMWARE 5.05</div><h4>5.05 FW Host</h4><p>Menu informasi untuk host firmware 5.05.</p><button onclick="showInfo('505')">Lihat informasi</button></article>
+    <article class="card"><div class="fw">FIRMWARE 6.72</div><h4>6.72 GoldHEN</h4><p>Referensi menu untuk firmware 6.72.</p><button onclick="showInfo('672')">Lihat informasi</button></article>
+    <article class="card"><div class="fw">FIRMWARE 9.00</div><h4>9.00 GoldHEN</h4><p>Referensi menu untuk firmware 9.00.</p><button onclick="showInfo('900')">Lihat informasi</button></article>
+    <article class="card"><div class="fw">PANDUAN</div><h4>Restore / Bantuan</h4><p>Catatan umum untuk mengakses panduan pemulihan host dari sumber resmi proyek.</p><button onclick="showInfo('restore')">Lihat informasi</button></article>
+    <article class="card"><div class="fw">TENTANG</div><h4>Mister Playstation Bogor</h4><p>Halaman komunitas dan referensi. Hubungi admin toko melalui kanal yang kamu kelola sendiri.</p><button onclick="showInfo('about')">Tentang halaman</button></article>
+  </section>
+  <div id="infoPanel" class="info" role="status" aria-live="polite"></div>
+  <div class="sectionhead"><h3>Referensi & Sumber</h3><span>tautan eksternal</span></div>
+  <section class="tools">
+    <div class="tool"><h4>Host referensi GamerHack</h4><p>Lihat proyek sumber untuk memeriksa daftar firmware, struktur halaman, dan informasi terbaru. Tautan ini tidak dijalankan di dalam halaman ini.</p><a class="linkbtn" href="https://gamerhack.github.io/g2all/index.html" target="_blank" rel="noopener noreferrer">Buka situs referensi ↗</a></div>
+    <div class="tool"><h4>GoldHEN — proyek resmi</h4><p>Baca dokumentasi dan peringatan dari repositori GoldHEN. Payload pihak ketiga bisa menyebabkan crash atau gangguan konsol.</p><a class="linkbtn" href="https://github.com/GoldHEN/GoldHEN" target="_blank" rel="noopener noreferrer">Buka GitHub GoldHEN ↗</a></div>
+  </section>
+</main>
+<footer>
+  <strong>MISTER PLAYSTATION BOGOR</strong><br>
+  Halaman navigasi independen untuk informasi komunitas. Tidak berafiliasi dengan Sony Interactive Entertainment atau pengembang host yang ditautkan.<br>
+  <span class="smallprint">Semua nama proyek dan merek pihak ketiga adalah milik pemiliknya. Periksa lisensi dan sumber sebelum menyalin aset atau kode.</span>
+</footer>
+</div>
+<script>
+const messages = {
+ multi: ["GoldHEN Multi FW", "Ini adalah panel demo. Belum ada exploit atau payload yang terpasang. Gunakan dokumentasi sumber untuk memeriksa dukungan firmware secara langsung."],
+ "505": ["Firmware 5.05", "Menu ini hanya untuk navigasi. Tidak menjalankan GoldHEN, exploit, atau payload. Pastikan semua file yang dipakai berasal dari proyek tepercaya dan cocok dengan firmware."],
+ "672": ["Firmware 6.72", "Panel informasi demo saja. Tidak ada berkas exploit yang disertakan."],
+ "900": ["Firmware 9.00", "Panel informasi demo saja. Tidak ada berkas exploit yang disertakan."],
+ restore: ["Restore / Bantuan", "Gunakan panduan resmi dari pengembang host yang kamu pilih. Hindari menjalankan payload yang tidak diketahui sumber atau kompatibilitasnya."],
+ about: ["MISTER PLAYSTATION Bogor", "Kamu dapat mengubah nama, warna, teks, dan tautan di index.html. Menu ini sengaja tidak mengeksekusi kode exploit."]
+};
+function showInfo(key){
+ const panel=document.getElementById("infoPanel");
+ const item=messages[key];
+ panel.innerHTML="<strong>"+item[0]+"</strong><br>"+item[1];
+ panel.classList.add("show");
+ panel.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+</script>
+</body>
 </html>
